@@ -35,7 +35,7 @@ $(document).ready(function () {
     $('.mobile-menu').slideToggle();
   });
 
-  $('body').click(function() {
+  $('.nav-links').click(function() {
     $('.mobile-menu').slideUp();
     $('.menu-icon i').removeClass('fa-times').addClass('fa-bars');
   })
