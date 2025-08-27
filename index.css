@@ -15,8 +15,7 @@
   --mobile-menu-text: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+body.dark {
     --bg-color: #000000;
     --text-color: white;
     --header-bg: #0d1b2a;
@@ -25,14 +24,14 @@
     --hero-text-color: #e0e0e0;
     --hero-a-color: #2193b0;
     --hero-a-bg: white;
-    --features-bg: #660000;
+    --features-bg: #0d1b2a;
     --border-color: #b8860b;
     --cta-bg-color: linear-gradient(to right, #0d1b2a, #660000, #b8860b);
     --footer-bg-color: linear-gradient(to right, #0d1b2a, #660000, #b8860b);
     --mobile-menu-bg: #0d1b2a;
     --mobile-menu-text: #e0e0e0;
   }
-}
+
 
 body {
   font-family: 'Outfit', sans-serif;
@@ -168,6 +167,52 @@ footer {
   display: none;
 }
 
+.crt_folder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fol_lable {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.crt_folder {
+  margin: 40px auto;
+  max-width: 85%;
+  /* background-color: white; */
+}
+
+.newfolder {
+  width: 100px;
+  height: 100px;
+  background-color: var(--features-bg);
+  border: 2px dotted var(--border-color);
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crt_btn {
+  width: 60px;
+  height: 60px;
+  background-color: var(--border-color);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.crt_btn i {
+  color: white; 
+  font-size: 30px;
+}
+
 
 @media screen and (max-width: 768px) {
   header {
@@ -211,5 +256,10 @@ footer {
 
   .hero p {
     font-size: 18px;
+  }
+
+  .newfolder {
+    width: 80px;
+    height: 80px;
   }
 }

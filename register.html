@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body {
+      background: #e9ecef;
+      font-family: Arial, sans-serif;
+    }
+    .register-box {
+      width: 350px;
+      margin: 100px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    input[type="submit"]:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-box">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input type="text" name="name" placeholder="Full Name" id="name" required>
+      <input type="email" name="email" placeholder="Email" id="email" required>
+      <input type="password" name="password" placeholder="Password" id="password" required>
+      <input type="submit" name="submit" value="Register">
+    </form>
+  </div>
+
+</body>
+
+<script>
+
+  document.getElementById("registerForm").addEventListener("submit", onRegisterFormSubmit);
+  function onRegisterFormSubmit() {
+        event.preventDefault(); 
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let users = JSON.parse(localStorage.getItem('users')) || []
+    let user = {
+      name: name,
+      email: email,
+      password: password
+    };
+
+    users.push(user);
+    
+    localStorage.setItem('users', JSON.stringify(users));
+        window.location.href = '/login.html';
+
+    alert('Registration successful!');
+  }
+</script>
+
+</html>
